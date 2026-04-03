@@ -2,7 +2,89 @@
 
 ---
 
-## Table 2: Domain Number D Ablation (OCW-10, 3 Seeds)
+## Round2
+---
+## Round2-Table 1: D4RL-CL-10 Benchmark Overview
+
+<table>
+  <thead>
+    <tr>
+      <th>Domain</th>
+      <th>Tasks</th>
+      <th>Number</th>
+      <th>Simulator</th>
+      <th>State Dim</th>
+      <th>Action Dim</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Locomotion</td>
+      <td>hopper / halfcheetah / walker2d </td>
+      <td>3</td>
+      <td>MuJoCo</td>
+      <td>11–17</td>
+      <td>3–6</td>
+    </tr>
+    <tr>
+      <td>Dexterous</td>
+      <td>pen-cloned/human-v1, door-cloned/human-v1</td>
+      <td>4</td>
+      <td>Adroit</td>
+      <td>45</td>
+      <td>24–28</td>
+    </tr>
+    <tr>
+      <td>Kitchen</td>
+      <td>kitchen-partial-v0, kitchen-complete-v0</td>
+      <td>2</td>
+      <td>Franka Kitchen</td>
+      <td>60</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>Navigation</td>
+      <td>antmaze-umaze-v0</td>
+      <td>1</td>
+      <td>AntMaze</td>
+      <td>29</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td><strong>Note</strong></td>
+      <td colspan="5">Compared to OCW, D4RL-CL-10 poses three additional challenges: <strong>heterogeneous state/action spaces</strong> (state dim spans 11→60), <strong>diverse simulators</strong> (4 physically distinct engines vs. OCW's unified MuJoCo).</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Round2-Table 2:Task Training Order & Natural Language Descriptions
+
+| Step | Task | Domain | Data Size | Natural Language Description |
+|---|---|---|---|---|
+| T1 | hopper-medium-expert-v2 | Locomotion | 2000 eps | Hop forward with a single-legged robot while maintaining upright balance using a mixture of medium and expert hopping strategies. |
+| T2 | pen-cloned-v1 | Dexterous | 2000 eps | Twirl and rotate a pen to a target orientation using a dexterous robotic hand, learned from a cloned behavioral policy with added exploration noise. |
+| T3 | kitchen-partial-v0 | Kitchen | 613 eps | Complete a subset of kitchen manipulation subtasks including moving the kettle and opening the microwave in a simulated kitchen. |
+| T4 | halfcheetah-medium-expert-v2 | Locomotion | 2000 eps | Run forward as fast as possible with a six-legged cheetah robot using a mixture of medium and expert locomotion policies. |
+| T5 | door-cloned-v1 | Dexterous | 2000 eps | Open a door by grasping and turning the handle with a dexterous robotic hand, learned from a cloned behavioral policy with added exploration noise. |
+| T6 | antmaze-umaze-v0 | Navigation | 2000 eps | Control a four-legged ant robot to navigate through a simple U-shaped maze to reach a fixed goal position. |
+| T7 | walker2d-medium-expert-v2 | Locomotion | 2000 eps | Walk forward with a bipedal two-legged robot while keeping balance using a mixture of medium and expert walking gaits. |
+| T8 | pen-human-v1 | Dexterous | 50 eps | Twirl and rotate a pen to a target orientation using a dexterous robotic hand, learned from human teleoperation demonstrations. |
+| T9 | kitchen-complete-v0 | Kitchen | 19 eps | Complete all four kitchen manipulation subtasks: move kettle, open microwave, toggle light switch, and slide cabinet in a simulated kitchen environment. |
+| T10 | door-human-v1 | Dexterous | 33 eps | Open a door by grasping and turning the handle with a dexterous robotic hand, learned from human teleoperation demonstrations. |
+
+---
+
+
+
+
+
+## Round1
+---
+
+
+## Round1-Table 1: Domain Number D Ablation (OCW-10, 3 Seeds)
 
 | D (Domains) | P ↑           | F ↓            | FWT ↑         |
 | ------------- | ------------- | -------------- | ------------- |
@@ -16,7 +98,7 @@
 
 ---
 
-## Table S3: Task Order Robustness (OCW-10, 3 Seeds)
+## Round1-Table 2: Task Order Robustness (OCW-10, 3 Seeds)
 
 | Order | Task Sequence (T1 → T10)                                                                                                                                  |
 | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
